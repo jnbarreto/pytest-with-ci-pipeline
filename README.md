@@ -3,14 +3,14 @@
 Pytest - commands
 Documentação pytest - https://docs.pytest.org/en/stable/index.html
 
-pytest: roda todos os testes
-pytest [name_archive_test]: roda o teste especifico
-pytest -v: da um detalhamento a mais
-pytest -x: Fast error, Se um erro quebrar ele já vai parar os teste
-pytest --pdb: ele para o debugger exatamente na onde quebrou
-pytest -k [name_test]: funciona como uma keyword, ele vai executar os testes com aquele nome
-pytest -s: mostra os prints na execução do teste
-pytest -rs: mostra a razão de ter pulado
+pytest: roda todos os testes<br>
+pytest [name_archive_test]: roda o teste especifico<br>
+pytest -v: da um detalhamento a mais<br>
+pytest -x: Fast error, Se um erro quebrar ele já vai parar os teste<br>
+pytest --pdb: ele para o debugger exatamente na onde quebrou<br>
+pytest -k [name_test]: funciona como uma keyword, ele vai executar os testes com aquele nome<br>
+pytest -s: mostra os prints na execução do teste<br>
+pytest -rs: mostra a razão de ter pulado<br>
 
 
 # Status de Falhas
