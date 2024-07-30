@@ -3,15 +3,29 @@ name: ci-python-workflow
 on: [push, pull_request]
 
 jobs:
-    check-application:
+    test:
         runs-on: ubuntu-latest
+
         steps:
-            - uses: actions/checkout@v4
-            - uses: actions/setup-python@v5
+            - name: Copia os arquivos do github
+              uses: actions/checkout@v4
+
+            - name: Instalando o python
+              uses: actions/setup-python@v5
               with:
-                python-version: '^3.11'
-            - run: pipx install poetry
-            - run: poetry install
-            - run: poetry shell
-            - run: pytest
-            - run: python jogo.py
+                python-version: "3.11"
+                cache: 'poetry'
+
+            - name: Instalando o pipx
+              run: |
+                sudo apt update
+                sudo apt install pipx
+
+            - name: Instalando o poetry
+              run: pipx install poetry
+
+            - name: Instalando as dependencias
+              run: poetry install
+
+            - name: Rodar os testes
+              run: poetry run pytest
