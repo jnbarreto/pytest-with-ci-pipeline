@@ -1,0 +1,30 @@
+name: ci-python-workflow
+
+on: [push, pull_request]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Copia os arquivos do github
+              uses: actions/checkout@v4
+
+            - name: Instalando o python
+              uses: actions/setup-python@v5
+              with:
+                python-version: "3.11"
+
+            - name: Instalando o pipx
+              run: |
+                sudo apt update
+                sudo apt install pipx
+
+            - name: Instalando o poetry
+              run: pipx install poetry
+
+            - name: Instalando as dependencias
+              run: poetry install
+
+            - name: Rodar os testes
+              run: poetry run pytest
