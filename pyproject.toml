@@ -23,6 +23,12 @@ mkdocs-material = "^9.5.30"
 mkdocstrings = "^0.25.2"
 mkdocstrings-python = "^1.10.7"
 
+
+[tool.pytest.ini_options]
+markers = [
+    "goiabada: marks tests as goiabada"
+]
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
